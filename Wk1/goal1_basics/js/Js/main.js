@@ -22,9 +22,19 @@ console.log("FIGHT!!!");
     var playerTwoHealth = 100;
 
 
-    function fight(){};
-    function winnerCheck(){};
+    function fight(){
+        console.log('in the fight function');
 
+    };
+
+
+    function winnerCheck(){
+
+        
+    };
+
+    /***** The program gets started below *****/
+    console.log('program starts')
     fight();
 
 
