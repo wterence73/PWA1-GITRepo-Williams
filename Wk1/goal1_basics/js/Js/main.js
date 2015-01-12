@@ -14,12 +14,14 @@ console.log("FIGHT!!!");
     var playerTwoName = "Kratos";
 
     //playerdamage
-    var player1Damage = 50;
-    var player2Damage = 50;
+    var player1Damage = 20;
+    var player2Damage = 20;
 
     //player health
     var playerOneHealth = 100;
     var playerTwoHealth = 100;
+
+    var round=0;
 
 
     function fight(){
@@ -54,7 +56,7 @@ console.log("FIGHT!!!");
 
        if (results === "no winner"){
           round++;
-           alert(playerOneName+":"+playerOneHealth+" *ROUND "+1+" OVER* "+playerTwoName+":"+playerTwoHealth);
+           alert(playerOneName+":"+playerOneHealth+" *ROUND "+round+" OVER* "+playerTwoName+":"+playerTwoHealth);
        }else{
            alert(results);
            break;
