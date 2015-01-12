@@ -9,4 +9,16 @@
 
 console.log("FIGHT!!!");
 
+//player name
+    var playerOneName = "Kabul";
+    var playerTwoName = "Kratos";
+
+    //playerdamage
+    var player1Damage = 50;
+    var player2Damage = 50;
+
+    //player health
+    var playerOneHealth = 100;
+    var playerTwoHealth = 100;
+
 })();
