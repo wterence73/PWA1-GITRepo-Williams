@@ -21,4 +21,11 @@ console.log("FIGHT!!!");
     var playerOneHealth = 100;
     var playerTwoHealth = 100;
 
+
+    function fight(){};
+    function winnerCheck(){};
+
+    fight();
+
+
 })();
