@@ -11,19 +11,21 @@ console.log("FIGHT!!!");
 
 //game player names
 
-    var playerNames = ("Wonder Woman", "Cat Woman", "Kabul", "Batman", "Superman", "Kratos");
+    var playerNames = ["Wonder Woman", "Cat Woman", "Kabul", "Batman", "Superman", "Kratos"];
     var playerOneName = playerNames[2];
     var playerTwoName = playerNames[5];
 
     //game play playerdamage
 
-    var playerDamage = ("10, "20","30", "40", 50", "60");
-    var player1Damage = playerDamage[20];
+    var playerDamage = ["10", "20", "30", "40", "50", "60"];
+    var player1Damage = playerDamage[1];
     var player2Damage = playerDamage[1];
 
-    //player health
-    var playerOneHealth = 100;
-    var playerTwoHealth = 100;
+    //game play player health status
+
+    var playerHealth = ["10", "25", "50", "80", "100"];
+    var playerOneHealth = playerHealth[4];
+    var playerTwoHealth = playerHealth[4];
 
     var round=0;
 
@@ -31,7 +33,10 @@ console.log("FIGHT!!!");
     function fight(){
         console.log('in the fight function');
 
-        alert(playerOneName+":"+playerOneHealth+" *START* "+playerTwoName+":"+playerTwoHealth);
+        var playerStart = ["Wonder Woman", "Cat Woman", "Kabul", "Batman", "Superman", "Kratos"];
+        var playerHeart = ["10", "25", "50", "80", "100"];
+
+        alert(playerStart[2]+":"+playerHeart[4]+" *START* "+playerStart[5]+":"+playerHeart[4]);
 
    for (var i=0; i < 10; i++){
        console.log(i);
