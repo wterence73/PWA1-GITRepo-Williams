@@ -15,9 +15,11 @@ console.log("FIGHT!!!");
     var playerOneName = playerNames[2];
     var playerTwoName = playerNames[5];
 
-    //playerdamage
-    var player1Damage = 20;
-    var player2Damage = 20;
+    //game play playerdamage
+
+    var playerDamage = ("10, "20","30", "40", 50", "60");
+    var player1Damage = playerDamage[20];
+    var player2Damage = playerDamage[1];
 
     //player health
     var playerOneHealth = 100;
