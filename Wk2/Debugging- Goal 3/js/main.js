@@ -7,13 +7,20 @@
 
 
 // Create privatized scope using a self-executing function
-function () {
+(function(){
+
+    console.log("Javascript Search");
+
+})();
 
     // Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
 
     var resultsDIV = document.getElementById("results"),
         searchInput = document.forms[0].search,
-        currentSearch = "";
+        currentSearch;
+
+
+     console.log("resultsDIV: ", resultsDIV + " / searchInput: ", searchInput + " / currentSearch: ", currentSearch);
 
 
     // Validates search query
@@ -127,7 +134,7 @@ function () {
             // THE LINE DIRECTLY BELOW IS CORRECT
             document.forms[0].onsubmit = function () {
                 var query = searchInput.value;
-                validqte(query);
+                validate(query);
 
                 // return false is needed for most events - this will be reviewed in upcoming course material
                 // THE LINE DIRECTLY BELOW IS CORRECT
