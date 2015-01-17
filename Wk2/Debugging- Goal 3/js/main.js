@@ -8,7 +8,7 @@
 
 
 // Create privatized scope using a self-executing function
-function(){
+    function(){
 
     // Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
     var resultsDIV = document.getElementById("results"),
@@ -17,10 +17,14 @@ function(){
         ;
 
     // Validates search query
-    var validate; == function(query){
+    var validate;
+
+        function query(){
+
+        })();
 
         // Trim whitespace from start and end of search query
-        while(query.charAt(0) = " "){
+        while(query.charAt(i) = " "){
             query = query.substring(1, query.length);
         };
         while(query.charAt(query.length-1) === ""){
@@ -29,7 +33,9 @@ function(){
 
             // Check search length, must have 3 characters
             if(query.length < 3){
-                alert("Your search query is too small, try again.);
+                alert("Your search query is too small, try again.");
+
+                    console.log("Your search query is too small, try again.");
 
                 // (DO NOT FIX THE LINE DIRECTLY BELOW)
                 searchInput.focus();
