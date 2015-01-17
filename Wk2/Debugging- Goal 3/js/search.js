@@ -8,7 +8,7 @@
 	;
 	
 	// Validates search query
-	var validqte; == function(query){
+	var validate; == function(query){
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) = " "){
@@ -17,7 +17,7 @@
 		while(query.charAt(query.length-1) === ""){
 			query = query.substring(0, query.length-1);
 		;
-		
+
 		// Check search length, must have 3 characters
 		if(query.length < 3){
 			alert("Your search query is too small, try again.);
@@ -26,10 +26,10 @@
 			searchInput.focus();
 			return;
 		};
-		
+
 		search(query);
 	};
-	
+
 	// Finds search matches
 	var search = function(query)
 		
@@ -60,7 +60,7 @@
 				};
 			;
 		;
-		
+
 		results.sort();
 		
 		// Check that matches were found, and run output functions
@@ -70,7 +70,7 @@
 			showMatches(results);
 		};
 	};
-	
+
 	// Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
 	var noMatch = function(){
 		var html = ''+

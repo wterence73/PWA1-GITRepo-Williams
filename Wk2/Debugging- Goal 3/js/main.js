@@ -1,7 +1,7 @@
 /**
- * Terence Williams
- * 01/16/15
- * Debugging- goal 3
+ Terence Williams
+ 01/16/15
+ Debugging- goal 3
  */
 
 
@@ -25,7 +25,7 @@
 
     // Validates search query
 
-    function(query){
+    functionQuery{
 
         // Trim whitespace from start and end of search query
         while (query.charAt(0) = " ") {
@@ -38,13 +38,15 @@
 
             // Check search length, must have 3 characters
             if (query.length < 3) {
-                alert("Your search query is too small, try again.);
+                console.log("Your search query is too small, try again.");
+
+
 
                 // (DO NOT FIX THE LINE DIRECTLY BELOW)
                 searchInput.focus();
                 return;
             }
-            ;
+
 
             search(query);
         }
