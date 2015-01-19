@@ -1,20 +1,24 @@
 // Create privatized scope using a self-executing function
-function Javascript(){
+function Javascript() {
 
-	console.log("Debugging");
+"use strict";
 
 }
 // Variable initialization (DO NOT FIX ANY OF THE BELOW VAR's)
-	var resultsDIV = document.getElementById("results"),
+var resultsDIV = document.getElementById("results"),
 		searchInput = document.forms[0].search,
 		currentSearch = ''
 		;
 
 	// Validates search query
-	var validate = function (query)
+	var validate = function(query){
+
+
+
+	};
 
 	// Trim whitespace from start and end of search query
-	while (query.charAt(0) = " "){
+	while(query.charAt(0) == "!"){
 		query = query.substring(1, query.length);
 	}
     while(query.charAt(query.length - 1) === "") {
