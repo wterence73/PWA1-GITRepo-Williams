@@ -29,7 +29,7 @@ console.log("FIGHT!!!");
     // New player arrays created
 
     var playerArrays = playerOne("Kabal", "20", "100");
-                       playerTwo("Kratos,", "20", "100");
+    var playerArrays1 = playerTwo("Kratos", "20", "100");
 
 
 
@@ -44,28 +44,35 @@ console.log("FIGHT!!!");
     var playerHealth = ["10", "25", "50", "80", "100"];
     var playerOneHealth = playerHealth[4];
     var playerTwoHealth = playerHealth[4];
-
     var round=0;
 
+
+    // New fight function created
 
     function fight(){
         console.log('in the fight function');
 
         var playerStart = playerOne.name;
-                          playerOne.health;
-                          playerTwo.name;
-                          playerTwo.health;
+        var playerStart1 = playerOne.health;
+        var playerStart2 = playerTwo.name;
+        var playerStart3 = playerTwo.health;
 
 
         // Access to DOM
 
-        var playerAccess =
-            document.getElementById("scores");
-            document.getElementById("Kabal");
-            document.getElementById("Kratos");
+        var playerAccess = document.getElementById("scores");
+        var playerAccess1 = document.getElementById("Kabal");
+        var playerAccess2 = document.getElementById("Kratos");
 
-        
+        console.log(playerAccess);
+        console.log(playerAccess1);
+        console.log(playerAccess2);
 
+        // Access the innerHtml
+
+        playerAccess.innerHTML = "100";
+        playerAccess1.innerHTML = "Kabal";
+        playerAccess2.innerHTML = "Kratos";
 
 
 
@@ -74,31 +81,33 @@ console.log("FIGHT!!!");
 
        //random formula created Math.floor(Math.random() * (max - min) + min);
 
-       var minDamage1 = player1Damage * .5;
-       var minDamage2 = player2Damage * .5;
-       var f1 = Math.floor(Math.random()*(player1Damage-minDamage1)+minDamage1);
-       var f2 = Math.floor(Math.random()*(player2Damage-minDamage2)+minDamage2);
+       var minDamage1 = playerOne.damage * .5;
+       var minDamage2 = playerTwo.damage * .5;
+       var f1 = Math.floor(Math.random()*(playerOne.damage-minDamage1)+minDamage1);
+       var f2 = Math.floor(Math.random()*(playerTwo.damage-minDamage2)+minDamage2);
 
        //console.log(f1);
        //console.log(f2);
 
        //inflict damage
-       playerOneHealth-=f1;
-       playerTwoHealth-=f2;
+       playerOne.health-=f1;
+       playerTwo.health-=f2;
 
-       console.log(playerOneHealth);
-       console.log(playerTwoHealth);
+       console.log(playerOne.health);
+       console.log(playerTwo.health);
 
-       console.log(playerOneName+":"+playerOneHealth+" "+playerTwoName+":"+playerTwoHealth);
+       console.log(playerOne.name+":"+playerOne.health+" "+playerTwo.name+":"+playerTwo.health);
 
        var results = winnerCheck();
        console.log(results);
 
        if (results === "no winner"){
           round++;
-           alert(playerOneName+":"+playerOneHealth+" *ROUND "+round+" OVER* "+playerTwoName+":"+playerTwoHealth);
+           playerAccess.innerHTML = "100";
+           playerAccess1.innerHTML = "Kabal";
+           playerAccess2.innerHTML = "Kratos";
        }else{
-           alert(results);
+           console.log(results);
            break;
        }
 
@@ -113,22 +122,22 @@ console.log("FIGHT!!!");
 
         var result="no winner";
 
-        if (playerOneHealth<1 && playerTwoHealth<1) {
+        if (playerOne.health<1 && playerTwo.health<1) {
             result = "You Both Die";
-        } else if(playerOneHealth<1){
-            result =playerTwoName+"WINS!!!"
-        } else if(playerTwoHealth<1){
-            result =playerOneName+"WINS!!!"
-        };
+        } else if(playerOne.health<1){
+            result =playerTwo.name+"WINS!!!";
+        } else if(playerTwo.health<1) {
+            result = playerOne.name + "WINS!!!";
+        }
 
         return result;
 
 
 
-    };
+    }
 
     /***** The program gets started below *****/
-    console.log('program starts')
+    console.log('program starts');
     fight();
 
 
