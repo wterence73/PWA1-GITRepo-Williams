@@ -1,6 +1,6 @@
 /**
  Terence Williams
- 01/20/15
+ 01/22/15
  Assignment: Goal 4: Duel 3
  */
 
@@ -15,22 +15,35 @@ console.log("FIGHT!!!");
     var playerOneName = playerNames[2];
     var playerTwoName = playerNames[5];
 
-    //game play player stats
 
-    var playerOne = { name: "Kratos", damage: "20", health: "100"
+    // New game objects created
 
-    };
-
-    var playerTwo = { name: "Kabul", damage: "20", health: "100"
+    var playerOne = {name: "Kabul", damage: "20", health: "100"
 
     };
 
-    // player info needed as an array
+    var playerTwo = {name: "Kratos", damage: "20", health: "100"
 
-    var playerOne = ["name", "damage", "health"];
+    };
 
-    var playerTwo = ["name", "damage", "health"];
+    // New player arrays created
 
+    var playerArrays = playerOne("Kabul", "20", "100");
+                       playerTwo("Kratos,", "20", "100");
+
+
+
+    //game play playerdamage
+
+    var playerDamage = ["10", "20", "30", "40", "50", "60"];
+    var player1Damage = playerDamage[1];
+    var player2Damage = playerDamage[1];
+
+    //game play player health status
+
+    var playerHealth = ["10", "25", "50", "80", "100"];
+    var playerOneHealth = playerHealth[4];
+    var playerTwoHealth = playerHealth[4];
 
     var round=0;
 
@@ -38,10 +51,13 @@ console.log("FIGHT!!!");
     function fight(){
         console.log('in the fight function');
 
-        var playerStart = ["Wonder Woman", "Cat Woman", "Kabul", "Batman", "Superman", "Kratos"];
-        var playerHeart = ["10", "25", "50", "80", "100"];
+        var playerStart = playerOne.name;
+                          playerOne.health;
+                          playerTwo.name;
+                          playerTwo.health;
+        
 
-
+        alert(playerStart[2]+":"+playerHeart[4]+" *START* "+playerStart[5]+":"+playerHeart[4]);
 
    for (var i=0; i < 10; i++){
        console.log(i);
@@ -70,9 +86,9 @@ console.log("FIGHT!!!");
 
        if (results === "no winner"){
           round++;
-
+           alert(playerOneName+":"+playerOneHealth+" *ROUND "+round+" OVER* "+playerTwoName+":"+playerTwoHealth);
        }else{
-           ;
+           alert(results);
            break;
        }
 
