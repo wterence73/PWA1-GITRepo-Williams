@@ -18,7 +18,7 @@ console.log("FIGHT!!!");
 
     // New game objects created
 
-    var playerOne = {name: "Kabul", damage: "20", health: "100"
+    var playerOne = {name: "Kabal", damage: "20", health: "100"
 
     };
 
@@ -28,7 +28,7 @@ console.log("FIGHT!!!");
 
     // New player arrays created
 
-    var playerArrays = playerOne("Kabul", "20", "100");
+    var playerArrays = playerOne("Kabal", "20", "100");
                        playerTwo("Kratos,", "20", "100");
 
 
@@ -55,9 +55,19 @@ console.log("FIGHT!!!");
                           playerOne.health;
                           playerTwo.name;
                           playerTwo.health;
+
+
+        // Access to DOM
+
+        var playerAccess =
+            document.getElementById("scores");
+            document.getElementById("Kabal");
+            document.getElementById("Kratos");
+
         
 
-        alert(playerStart[2]+":"+playerHeart[4]+" *START* "+playerStart[5]+":"+playerHeart[4]);
+
+
 
    for (var i=0; i < 10; i++){
        console.log(i);
