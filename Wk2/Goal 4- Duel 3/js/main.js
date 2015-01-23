@@ -18,13 +18,13 @@ console.log("FIGHT!!!");
 
     // New game objects created
 
-    var playerOne = {name: "Kabal", damage: "20", health: "100"
+    var playerOne = [{name: "Kabal", damage: "20", health: "100"
 
-    };
+    }];
 
-    var playerTwo = {name: "Kratos", damage: "20", health: "100"
+    var playerTwo = [{name: "Kratos", damage: "20", health: "100"
 
-    };
+    }];
 
     // New player arrays created
 
