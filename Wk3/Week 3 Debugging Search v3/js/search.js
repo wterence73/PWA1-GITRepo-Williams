@@ -8,7 +8,7 @@
 	;
 	
 	// Validates search query
-	var validqte == function(query){
+	var validate = function(query){        // Corrected misspelled word
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) = " "){
@@ -20,7 +20,7 @@
 		
 		// Check search length, must have 3 characters
 		if(query.length < 3){
-			alert("Your search query is too small, try again.);
+			alert("Your search query is too small, try again.");          // Added quotation mark
 			
 			// (DO NOT FIX THE LINE DIRECTLY BELOW)
 			searchInput.focus();
@@ -31,7 +31,7 @@
 	};
 	
 	// Finds search matches
-	var search = function(query)
+	var search = function(query){            // Added curly brace for function
 		
 		// split the user's search query string into an array
 		var queryArray = query.join(" ");
@@ -57,7 +57,7 @@
 				var compare = dbitem.indexOf(qitem);
 				if(compare !== -1){
 					results.push(db[i]);
-				};
+				}
 			;
 		;
 		
