@@ -8,7 +8,7 @@
 	;
 	
 	// Validates search query
-	var validate = function(query){        // Corrected misspelled word
+	var validate; function query(){        // Corrected misspelled word
 		
 		// Trim whitespace from start and end of search query
 		while(query.charAt(0) = " "){
@@ -45,16 +45,16 @@
 			// each db[i] is a single video item, each title ends with a pipe "|"
 			// save a lowercase variable of the video title
 			var dbTitleEnd = db[i].indexOf('|');
-			var dbitem = db[i].tolowercase().substring(0, dbTitleEnd);
+			var dbItem = db[i].toLowercase().substring(0, dbTitleEnd);       // Added camel casing
 			
 			// loop through the user's search query words
 			// save a lowercase variable of the search keyword
 			for(var ii=0, jj=queryArray.length; ii<jj; ii++){
-				var qitem = queryArray[ii].tolowercase();
+				var qitem = queryArray[ii].toLowercase();
 				
 				// is the keyword anywhere in the video title?
 				// If a match is found, push full db[i] into results array
-				var compare = dbitem.indexOf(qitem);
+				var compare = dbItem.indexOf(qitem);         // Added camel casing
 				if(compare !== -1){
 					results.push(db[i]);
 				}
@@ -110,11 +110,10 @@
 	// THE LINE DIRECTLY BELOW IS CORRECT
 	document.forms[0].onsubmit = function(){
 		var query = searchInput.value;
-		validqte(query);
+		validate(query);                // Corrected word spelling
 
         // return false is needed for most events - this will be reviewed in upcoming course material
         // THE LINE DIRECTLY BELOW IS CORRECT
 		return false;
-	;
 
-})();
+;
