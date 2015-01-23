@@ -21,10 +21,10 @@
         // Trim whitespace from start and end of search query      // Whitespace loop created
         while(query.charAt(0) === " "){                       // While loop for whitespace  // Changed = to compare
             query = query.substring(1, query.length);
-        };
+        }
         while(query.charAt(query.length-1) === "") {      // While loop outcome
             query = query.substring(0, query.length - 1);
-        };                                             // Needs closing curly for loop
+        }                                             // Needs closing curly for loop
 
             // Check search length, must have 3 characters
             if(query.length < 3){                     // Beginning of if statement specifying if < 3 is given what outcome should be
@@ -33,7 +33,7 @@
                 // (DO NOT FIX THE LINE DIRECTLY BELOW)
                 searchInput.focus();     // Code correct w/return outcome
                 return;
-            };
+            }
 
             search(query);        //
         };
@@ -42,7 +42,7 @@
         var search = function(query){           // var setup and function initiator  // Function name no parenthesis // curly brace needed
 
         // split the user's search query string into an array
-        var queryArray = query.split[" "];    // Needs to change join to split in order to get correct outcome
+        var queryArray = query.split(" ");    // Needs to change join to split in order to get correct outcome
 
         // array to store matched results from database.js
         var results = [];           // Array created to store match results
@@ -56,15 +56,12 @@
             // save a lowercase variable of the video title
             var dbTitleEnd = db[i].indexOf('|');              // Index db var setup
 
-            console.log("I am ready!");
-
-
-            var dbitem = db[i].toLowercase().substring(0, dbTitleEnd);    // camelcase is wrong changed tolowercase to toLowercase
+            var dbitem = db[i].toLowerCase().substring(0, dbTitleEnd);                  // camelcase is wrong changed tolowercase to toLowercase
 
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
             for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {  // Loop created to loop through user's search words
-                var qitem = queryArray[ii].toLowercase();      // tolowercase needs changed to toLowercase
+                var qitem = queryArray[ii].toLowerCase();      // tolowercase needs changed to toLowercase
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
@@ -72,19 +69,19 @@
                 if (compare !== -1) {                    // if statement created to compare and push db change
                     results.push(db[i]);              // Results created with push element
                 }
-                ;
-            };
 
-        };
+            }
+
+        }
 
                 results.sort();        // where results are sorted
 
                 // Check that matches were found, and run output functions
-                if(results.length == 0){          // if statement created to check matches
+                if(results.length === 0){          // if statement created to check matches
                     noMatch();
                 }else{
                     showMatches(results);      // output from if statement
-                };
+                }
             };
 
             // Put "No Results" message into page (DO NOT FIX THE HTML VAR NOR THE innerHTML)
@@ -118,7 +115,7 @@
 
                     // make the video link - THE NEXT LINE IS CORRECT.
                     html += '<p><a href=' + url + '>' + title + '</a></p>';    // Dom-html interaction created to make link
-                };
+                }
                 resultsDIV.innerHTML = html; //THIS LINE IS CORRECT.  // results interaction and DOM
             };
 
