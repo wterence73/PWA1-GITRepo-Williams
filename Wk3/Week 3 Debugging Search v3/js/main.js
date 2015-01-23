@@ -16,10 +16,10 @@
         ;
 
     // Validates search query
-    var validate = function query(){           // Misspelled word and var operator should be one = sign   // Function name outside parenthesis
+    var validate = function(query){           // Misspelled word and var operator should be one = sign   // Function name outside parenthesis
 
         // Trim whitespace from start and end of search query      // Whitespace loop created
-        while(query.charAt(0) = " "){                       // While loop for whitespace
+        while(query.charAt(0) === " "){                       // While loop for whitespace  // Changed = to compare
             query = query.substring(1, query.length);
         };
         while(query.charAt(query.length-1) === "") {      // While loop outcome
@@ -39,40 +39,48 @@
         };
 
         // Finds search matches
-        var search = function query(){           // var setup and function initiator  // Function name no parenthesis // curly brace needed
+        var search = function(query){           // var setup and function initiator  // Function name no parenthesis // curly brace needed
 
         // split the user's search query string into an array
-        var queryArray = query.split(" ");    // Needs to change join to split in order to get correct outcome
+        var queryArray = query.split[" "];    // Needs to change join to split in order to get correct outcome
 
         // array to store matched results from database.js
         var results = [];           // Array created to store match results
 
+
         // loop through each index of db array
-        for(var i=0, j=db.length; i<j; i++){        // Loop created to loop through index db
+        for(var i=0, j=db.length; i<j; i++) {        // Loop created to loop through index db
+
 
             // each db[i] is a single video item, each title ends with a pipe "|"
             // save a lowercase variable of the video title
             var dbTitleEnd = db[i].indexOf('|');              // Index db var setup
+
+            console.log("I am ready!");
+
+
             var dbitem = db[i].toLowercase().substring(0, dbTitleEnd);    // camelcase is wrong changed tolowercase to toLowercase
 
             // loop through the user's search query words
             // save a lowercase variable of the search keyword
-            for(var ii=0, jj=queryArray.length; ii<jj; ii++){  // Loop created to loop through user's search words
+            for (var ii = 0, jj = queryArray.length; ii < jj; ii++) {  // Loop created to loop through user's search words
                 var qitem = queryArray[ii].toLowercase();      // tolowercase needs changed to toLowercase
 
                 // is the keyword anywhere in the video title?
                 // If a match is found, push full db[i] into results array
                 var compare = dbitem.indexOf(qitem);    // var setup for dbitem created
-                if(compare !== -1){                    // if statement created to compare and push db change
+                if (compare !== -1) {                    // if statement created to compare and push db change
                     results.push(db[i]);              // Results created with push element
-                };
+                }
                 ;
-                ;
+            };
+
+        };
 
                 results.sort();        // where results are sorted
 
                 // Check that matches were found, and run output functions
-                if(results.length = 0){          // if statement created to check matches
+                if(results.length == 0){          // if statement created to check matches
                     noMatch();
                 }else{
                     showMatches(results);      // output from if statement
@@ -89,7 +97,7 @@
             };
 
             // Put matches into page as paragraphs with anchors
-            var showMatches = function results(){        // var setup created to start paragraphs with anchors  // changed parenthesis location
+            var showMatches = function(results){        // var setup created to start paragraphs with anchors  // changed parenthesis location
 
                 // THE NEXT 4 LINES ARE CORRECT.    // Dom-html interaction created for paragraphs
                 var html = '<p>Results</p>',
@@ -116,13 +124,15 @@
 
             // The onsubmit event will be reviewed in upcoming Course Material.
             // THE LINE DIRECTLY BELOW IS CORRECT
-            document.forms[0].onsubmit = function(){  // This helps automate the forms functions
+            document.forms[0].onsubmit = function() {  // This helps automate the forms functions
                 var query = searchInput.value;     // var setup for search input value
                 validate(query);    // word misspelled
 
                 // return false is needed for most events - this will be reviewed in upcoming course material
                 // THE LINE DIRECTLY BELOW IS CORRECT
                 return false;   // code correct
-                ;
 
-            })();         // code correct
+            };             // Needed t close function
+
+
+            })();         // code correct   // closes overall function
