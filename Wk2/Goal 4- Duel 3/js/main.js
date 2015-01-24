@@ -10,27 +10,25 @@
 console.log("FIGHT!!!");
 
 
-    // New game objects created
+    // New game objects and arrays created
 
-    var playerOne = [{name: "Kabal", damage: "20", health: "100"
-
-    }];
-
-    var playerTwo = [{name: "Kratos", damage: "20", health: "100"
-
-    }];
-
-    // New player arrays created
-
-    var playerArrays = playerOne("Kabal", "20", "100");
-    var playerArrays1 = playerTwo("Kratos", "20", "100");
+    var playerOne = {name: "Kabal", damage: "20", health: "100"};
+    var playerTwo = {name: "Kratos", damage: "20", health: "100"};
+   
 
     var round=0;
 
 
-    // Fight button created
+    // Fight button variable created
 
     var fightButton = document.getElementById(".buttonblue");
+
+
+     // players health from DOM
+
+    document.getElementById("playerOne").innerHTML = playerOne.name + ":" + playerOne.health;
+    document.getElementById("playerTwo").innerHTML = playerTwo.name + ":" + playerTwo.health;
+
 
      // New fight function created
 
@@ -39,37 +37,6 @@ console.log("FIGHT!!!");
         if (playerOne.health < 1 && playerTwo.health < 1) {
             return false;
         }
-
-        var playerStart = playerOne.name;
-        var playerStart1 = playerOne.health;
-        var playerStart2 = playerTwo.name;
-        var playerStart3 = playerTwo.health;
-
-
-        // Access to DOM
-
-        var playerAccess = document.getElementById("scores");
-        var playerAccess1 = document.getElementById("Kabal");
-        var playerAccess2 = document.getElementById("Kratos");
-
-        console.log(playerAccess);
-        console.log(playerAccess1);
-        console.log(playerAccess2);
-
-        // Access the innerHtml
-
-        playerAccess.innerHTML = "100";
-        playerAccess1.innerHTML = "Kabal";
-        playerAccess2.innerHTML = "Kratos";
-
-
-        // Button click setup
-
-        console.log(button);
-
-        button.innerHTML = "Fatality!!!";
-        button.setAttribute('onclick', null);
-
 
        //random formula created Math.floor(Math.random() * (max - min) + min);
 
@@ -82,45 +49,46 @@ console.log("FIGHT!!!");
        //console.log(f2);
 
        //inflict damage
-       playerOne.health-=f1;
-       playerTwo.health-=f2;
-
-       console.log(playerOne.health);
-       console.log(playerTwo.health);
-
-       console.log(playerOne.name+":"+playerOne.health+" "+playerTwo.name+":"+playerTwo.health);
+       playerOne.health - f1;
+       playerTwo.health - f2;
 
        var results = winnerCheck();
        console.log(results);
 
        if (results === "no winner"){
           round++;
-           playerAccess.innerHTML = "100";
-           playerAccess1.innerHTML = "Kabal";
-           playerAccess2.innerHTML = "Kratos";
+           document.getElementById("playerOne").innerHTML = playerOne.name + ":" + playerOne.health;
+           document.getElementById("playerTwo").innerHTML = playerTwo.name + ":" + playerTwo.health;
+           document.getElementById("round").innerHTML = "round " + round + " : Finished!";
        }else{
-           console.log(results);
+           document.getElementById("playerOne").innerHTML = "";
+           document.getElementById("playerTwo").innerHTML = "";
+           document.getElementById("round").innerHTML = results;
 
        }
 
-
    };
-    )};
+        console.log(button);
+    button.innerHTML = "Fatality!!!";
+    button.setAttribute('onclick');
 
-
-    function winnerCheck(){
+    function winnerCheck() {
         console.log("in winnerCheck FN");
 
 
-        var result="no winner";
+        var result = "no winner";
 
-        if (playerOne.health<1 && playerTwo.health<1) {
+        if (playerOne.health < 1 && playerTwo.health < 1) {
             result = "You Both Die";
-        } else if(playerOne.health<1){
-            result =playerTwo.name+"WINS!!!";
-        } else if(playerTwo.health<1) {
+        } else if (playerOne.health < 1) {
+            result = playerTwo.name + "WINS!!!";
+        } else if (playerTwo.health < 1) {
             result = playerOne.name + "WINS!!!";
         }
+
+        return results;
+
+    };
 
 
         button.onclick = function(e) {
@@ -128,8 +96,6 @@ console.log("FIGHT!!!");
             e.preventDefault();
 
             return false;
-
-
 
     }
 
