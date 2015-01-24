@@ -13,8 +13,8 @@ console.log("FIGHT!!!");
     // New game objects and arrays created
 
     var fighters = [
-        playerOne = {name: "Kabal", damage: "20", health: "100"},
-        playerTwo = {name: "Kratos", damage: "20", health: "100"}
+        playerOne = {name: "Kung Lao", damage: "20", health: "100"},
+        playerTwo = {name: "Scorpion", damage: "20", health: "100"}
 
         ];
 
@@ -24,7 +24,7 @@ console.log("FIGHT!!!");
 
     // Fight button variable created
 
-    var fightButton = document.getElementById("buttonblue");
+    var fightButton = document.querySelector('.buttonblue');
 
 
      // players health from DOM
@@ -70,8 +70,8 @@ console.log("FIGHT!!!");
             document.getElementById("round").innerHTML = results;
 
             console.log(button);
-            button.innerHTML = "Fatality!!!";
-            button.setAttribute('onclick', null);
+            fightButton.innerHTML = 'Fatality!!!';
+            fightButton.setAttribute('onclick', null);
 
         }
 
@@ -85,9 +85,9 @@ console.log("FIGHT!!!");
         if (playerOne.health < 1 && playerTwo.health < 1) {
             result = "You Both Die";
         } else if (playerOne.health < 1) {
-            result = playerTwo.name + "WINS!!!";
+            result = playerTwo.name + " Fatality!!!";
         } else if (playerTwo.health < 1) {
-            result = playerOne.name + "WINS!!!";
+            result = playerOne.name + " Fatality!!!";
         }
 
         return result;
@@ -97,9 +97,10 @@ console.log("FIGHT!!!");
 
         fightButton.onclick = function(e) {
             fight();
+
             e.preventDefault();
             return false;
 
-    }
+    };
 
 })();
