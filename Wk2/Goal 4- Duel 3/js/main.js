@@ -9,12 +9,6 @@
 
 console.log("FIGHT!!!");
 
-//game player names
-
-    var playerNames = ["Wonder Woman", "Cat Woman", "Kabul", "Batman", "Superman", "Kratos"];
-    var playerOneName = playerNames[2];
-    var playerTwoName = playerNames[5];
-
 
     // New game objects created
 
@@ -31,26 +25,20 @@ console.log("FIGHT!!!");
     var playerArrays = playerOne("Kabal", "20", "100");
     var playerArrays1 = playerTwo("Kratos", "20", "100");
 
-
-
-    //game play playerdamage
-
-    var playerDamage = ["10", "20", "30", "40", "50", "60"];
-    var player1Damage = playerDamage[1];
-    var player2Damage = playerDamage[1];
-
-    //game play player health status
-
-    var playerHealth = ["10", "25", "50", "80", "100"];
-    var playerOneHealth = playerHealth[4];
-    var playerTwoHealth = playerHealth[4];
     var round=0;
 
 
-    // New fight function created
+    // Fight button created
+
+    var fightButton = document.getElementById(".buttonblue");
+
+     // New fight function created
 
     function fight(){
-        console.log('in the fight function');
+
+        if (playerOne.health < 1 && playerTwo.health < 1) {
+            return false;
+        }
 
         var playerStart = playerOne.name;
         var playerStart1 = playerOne.health;
@@ -75,9 +63,13 @@ console.log("FIGHT!!!");
         playerAccess2.innerHTML = "Kratos";
 
 
+        // Button click setup
 
-   for (var i=0; i < 10; i++){
-       console.log(i);
+        console.log(button);
+
+        button.innerHTML = "Fatality!!!";
+        button.setAttribute('onclick', null);
+
 
        //random formula created Math.floor(Math.random() * (max - min) + min);
 
@@ -108,12 +100,12 @@ console.log("FIGHT!!!");
            playerAccess2.innerHTML = "Kratos";
        }else{
            console.log(results);
-           break;
+
        }
 
 
    };
-    };
+    )};
 
 
     function winnerCheck(){
@@ -130,7 +122,12 @@ console.log("FIGHT!!!");
             result = playerOne.name + "WINS!!!";
         }
 
-        return result;
+
+        button.onclick = function(e) {
+            fight();
+            e.preventDefault();
+
+            return false;
 
 
 
