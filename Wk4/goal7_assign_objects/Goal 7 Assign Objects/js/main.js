@@ -10,3 +10,6 @@
 
 var projectNames = ["Paul", "Paula", "Pam", "Pierre", "Precious"];
 
+// For loop for the object people
+
+for 
